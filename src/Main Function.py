@@ -59,7 +59,8 @@ if matrixOffset == 0:
 
 
 ## For Matrix Offset = 1
-if matrixOffset = 1:
+if matrixOffset != 0:
+
     #The matrix looks like this
         # - - - - -
         #  - - - -
