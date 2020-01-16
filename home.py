@@ -1,5 +1,4 @@
 def home(device):
-
     from zaber.serial import BinarySerial, BinaryDevice, BinaryCommand, BinaryReply
     from check_command_succeeded import check_command_succeeded
 
@@ -9,4 +8,5 @@ def home(device):
     else:
         print("Device home failed.")
         exit(1)
-return
+
+    return;
