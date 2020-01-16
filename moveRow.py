@@ -1,4 +1,4 @@
-def moverow(horizontaldist,horizontalDir,speed, device):
+def moveRow(horizontaldist,horizontalDir,speed, device):
 
 
     from zaber.serial import BinarySerial, BinaryDevice, BinaryCommand, BinaryReply

@@ -1,4 +1,4 @@
-def movecol(verticaldist,verticaldir,speed, device):
+def moveCol(verticaldist,verticaldir,speed, device):
 
     from zaber.serial import BinarySerial, BinaryDevice, BinaryCommand, BinaryReply
 

@@ -15,6 +15,7 @@ matrixOffset = 0        #If rows are offset type 0, if rows are inline type 1.
 from moveRow import moveRow
 from moveCol import moveCol
 from zaber.serial import BinarySerial, BinaryDevice, BinaryCommand, BinaryReply
+from check_command_succeeded import check_command_succeeded
 
 ##hardware and OS setup
 with BinarySerial("/dev/ttyUSB0") as port:  # Linux
