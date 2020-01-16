@@ -21,6 +21,13 @@ from check_command_succeeded import check_command_succeeded
 with BinarySerial("/dev/ttyUSB0") as port:  # Linux
 #with BinarySerial("COM3") as port:         # Windows
 
+# Get a handle for device #1 on the serial chain. This assumes you have a
+# device already in Binary 9,600 baud mode at address 1 on your port.
+device1 = BinaryDevice(port, 1) # motor on x axis
+device2 = BinaryDevice(port, 2) # motor on y axis
+device3 = BinaryDevice(port, 3) # motor on z axis
+
+
 ## Home all devices
 # Home the device and check the result.
 reply = device.home()
