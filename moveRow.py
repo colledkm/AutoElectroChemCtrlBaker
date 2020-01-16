@@ -1,18 +1,21 @@
-def moverow(horizontaldist,horizontalDir,device):
+def moverow(horizontaldist,horizontalDir,speed, device):
+
+
+    from zaber.serial import BinarySerial, BinaryDevice, BinaryCommand, BinaryReply
 
 # -------------------------------------------------------------------------
 # TODO: Move up
 # -------------------------------------------------------------------------
 
     from moveDist import movedist
-    movedist(distance=, direction=,speed=,device) #move up off of the plate
+    movedist(distance=10, direction=1,speed=speed,device=device) #move up off of the plate
 
 # -------------------------------------------------------------------------
-# TODO: Move to next node, make sure horizontalDirection is compatiable with -1 or 1
+# TODO: Move to next node in the row, make sure horizontalDirection is compatiable with -1 or 1
 # -------------------------------------------------------------------------
 
     trueHorzDir = horizontalDir #convert -1 or 1 to direction
-    movedist(distance=horizontaldist, direction=trueHorzDir,speed=,device)
+    movedist(distance=horizontaldist, direction=trueHorzDir,speed=speed,device=device)
 
 # -------------------------------------------------------------------------
 # TODO: Move down
