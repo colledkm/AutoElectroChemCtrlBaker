@@ -1,13 +1,12 @@
 def moveRow(horizontaldist,horizontalDir,speed, device):
 
-
     from zaber.serial import BinarySerial, BinaryDevice, BinaryCommand, BinaryReply
+    from moveDist import movedist
 
 # -------------------------------------------------------------------------
 # TODO: Move up
 # -------------------------------------------------------------------------
 
-    from moveDist import movedist
     movedist(distance=10, direction=1,speed=speed,device=device) #move up off of the plate
 
 # -------------------------------------------------------------------------

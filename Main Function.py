@@ -15,7 +15,7 @@ matrixOffset = 0        #If rows are offset type 0, if rows are inline type 1.
 from moveRow import moveRow
 from moveCol import moveCol
 from zaber.serial import BinarySerial, BinaryDevice, BinaryCommand, BinaryReply
-from check_command_succeeded import check_command_succeeded
+from home import home
 
 ##hardware and OS setup
 with BinarySerial("/dev/ttyUSB0") as port:  # Linux
@@ -30,12 +30,9 @@ device3 = BinaryDevice(port, 3) # motor on z axis
 
 ## Home all devices
 # Home the device and check the result.
-reply = device.home()
-if check_command_succeeded(reply):
-    print("Device homed.")
-else:
-    print("Device home failed.")
-    exit(1)
+home(device1)
+home(device2)
+home(device3)
 
 ## For Matrix Offset = 0
 if matrixOffset == 0:
