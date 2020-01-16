@@ -1,0 +1,6 @@
+reply = device.home()
+if check_command_succeeded(reply):
+    print("Device homed.")
+else:
+    print("Device home failed.")
+    exit(1)
