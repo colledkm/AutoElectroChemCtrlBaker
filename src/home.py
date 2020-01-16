@@ -1,6 +1,5 @@
 def home(device):
-    from zaber.serial import BinarySerial, BinaryDevice, BinaryCommand, BinaryReply
-    from check_command_succeeded import check_command_succeeded
+    from src.check_command_succeeded import check_command_succeeded
 
     reply = device.home()
     if check_command_succeeded(reply):
