@@ -4,8 +4,8 @@ window = rg.TurtleWindow()
 
 horDist = 50
 verDist = 50
-nrow = 6 # number of rows
-ncol = 6 # number of columns
+nrow = 3 # number of rows
+ncol = 3 # number of columns
 
 turtle = rg.SimpleTurtle()
 
@@ -17,14 +17,27 @@ turtle.go_to(home)
 
 # move across the row
 
-for r in range(ncol):
+    turtle.pen_down()
+    turtle.draw_circle(4)
+    turtle.pen_up()
+
+
+turtle.right(90)
+turtle.forward(verDist)
+turtle.right(90)
+turtle.forward(horDist)
+
+for r in range(nrow):
     turtle.pen_down()
     turtle.draw_circle(4)
     turtle.pen_up()
     turtle.forward(horDist)
 
-#for r in nrow:
-#    turtle.forward(verDist)
-
+turtle.right(-90)
+turtle.forward(verDist)
+turtle.right(-90)
+turtle.forward(horDist)
+turtle.
+turtle.
 
 window.close_on_mouse_click()
