@@ -1,4 +1,5 @@
 import rosegraphics as rg
+import drawpoint from drawPoint
 
 window = rg.TurtleWindow()
 
@@ -16,28 +17,28 @@ home = rg.Point(-100,100)
 turtle.go_to(home)
 
 # move across the row
-
-    turtle.pen_down()
-    turtle.draw_circle(4)
-    turtle.pen_up()
+Loc = home
 
 
-turtle.right(90)
-turtle.forward(verDist)
-turtle.right(90)
-turtle.forward(horDist)
 
-for r in range(nrow):
-    turtle.pen_down()
-    turtle.draw_circle(4)
-    turtle.pen_up()
-    turtle.forward(horDist)
+Loc.x = turtle.x_cor()+50
 
-turtle.right(-90)
-turtle.forward(verDist)
-turtle.right(-90)
-turtle.forward(horDist)
-turtle.
-turtle.
+
+#turtle.right(90)
+#turtle.forward(verDist)
+#turtle.right(90)
+#turtle.forward(horDist)
+
+#for r in range(nrow):
+#    turtle.pen_down()
+#    turtle.draw_circle(4)
+#    turtle.pen_up()
+#    turtle.forward(horDist)
+
+#turtle.right(-90)
+#turtle.forward(verDist)
+#turtle.right(-90)
+#turtle.forward(horDist)
+
 
 window.close_on_mouse_click()

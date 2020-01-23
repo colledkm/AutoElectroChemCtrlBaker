@@ -1,9 +1,9 @@
-def drawPoint(self, pointLoc):
+def drawpoint(cursor, pointloc):
     import rosegraphics as rg
 
-    self.go_to(pointLoc)
-    self.pen_down()
-    self.draw_circle(4)
-    self.pen_up()
+    cursor.go_to(pointloc)
+    cursor.pen_down()
+    cursor.draw_circle(4)
+    cursor.pen_up()
 
     return;
