@@ -1,5 +1,5 @@
 import rosegraphics as rg
-import drawpoint from drawPoint
+from drawPoint import drawpoint
 
 window = rg.TurtleWindow()
 
@@ -12,15 +12,12 @@ turtle = rg.SimpleTurtle()
 
 # put the turtle pen at home
 turtle.pen = rg.Pen("red",2)
-turtle.pen_up()
 home = rg.Point(-100,100)
-turtle.go_to(home)
+drawpoint(turtle,home)
+
 
 # move across the row
 Loc = home
-
-
-
 Loc.x = turtle.x_cor()+50
 
 
