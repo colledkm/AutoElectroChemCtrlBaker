@@ -12,10 +12,10 @@
 from zaber.serial import BinarySerial, BinaryDevice, BinaryCommand, BinaryReply
 import time
 
-# Assume that our serial port can be found at COM1.
+# Assume that our serial port can be found at COM1
 
-port = BinarySerial("COM1")
-with BinarySerial("COM1") as port
+port = BinarySerial("COM13")
+with BinarySerial("COM13") as port:
     # Device number 0, command number 1.
     command = BinaryCommand(0, 1)
     #note: Binary motor commands are blocking
