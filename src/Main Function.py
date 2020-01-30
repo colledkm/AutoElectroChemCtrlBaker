@@ -43,8 +43,8 @@ if matrixOffset == 0:
         # - - - - -
         # - - - - -
 
-    for r in nrow:
-        for c in ncol:
+    for r in range(nrow):
+        for c in range(ncol):
             # -------------------------------------------------------------------------
             # TODO: Move across the row (finish moveRow function), add in picture command
             # -------------------------------------------------------------------------
