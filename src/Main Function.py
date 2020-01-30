@@ -34,6 +34,15 @@ home(device1)
 home(device2)
 home(device3)
 
+#make window for map
+window = rg.TurtleWindow()
+marker = rg.SimpleTurtle()
+
+marker.pen = rg.Pen("red",2)
+home = rg.Point(-100,100) # make home point
+Loc = rg.Point(marker.x_cor(),marker.y_cor()) # move marker to home
+
+
 ## For Matrix Offset = 0
 if matrixOffset == 0:
     #The matrix looks like this
