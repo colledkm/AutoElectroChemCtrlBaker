@@ -98,7 +98,7 @@ def matrixFrame(root):
     matrix_types = ['Regular', 'Offset']
     matrix_var = tkinter.StringVar()
     matrix_menu = tkinter.OptionMenu(root, matrix_var, *matrix_types)
-    matrix_menu.grid()
+    matrix_menu.grid(row = 3, column = 1)
 
     return frame
 
