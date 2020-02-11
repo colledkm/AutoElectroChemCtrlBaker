@@ -16,11 +16,14 @@ import time
 
 port = BinarySerial("COM6")    # be mindful of which COM port to use; check device manager; may need to restart port
 # with BinarySerial("COM13") as port:
-# Device number 0, command number 1.    1 is Home. 0 is Reset, move absolute is 20, relative is 21
-# command = BinaryCommand(0, 1)
+# Device number 0, command number 1.    1 is Home. 0 is Reset, move absolute is 20, relative is 21, 23 is stop
+#max relative move is 20,000, 42 sets speed, can be changed during a move; calculate spd w/ https://www.zaber.com/documents/ZaberSpeedSetting.xls
+#command = BinaryCommand(0, 1)
+#command = BinaryCommand(0, 20, 0)   #Goes at least to 50,000. Assume moving 10,000 = moving 0.01in
+command = BinaryCommand(0, 21, -20000)  #Can use negative distances with relative
 # note: Binary motor commands are blocking. Syntax: BinaryCommand(device#, command#, dataValue)
 # List of command #s can be found at: https://www.zaber.com/wiki/Manuals/Binary_Protocol_Manual#Command_Reference
-# port.write(command)
+port.write(command)
 
 # Assume that we have 1 devices connected.
 ndevices = 1
@@ -29,10 +32,10 @@ ndevices = 1
 # port.read()     #returns a BinaryReply. Discards when not assigned to a variable.
 
 # Assume we have a BinarySerial object called "port".
-device1 = BinaryDevice(port, 1)
+#device1 = BinaryDevice(port, 1)
 
 # device1.move_abs(5000)
-device1.home()          # don't recommend using device.functions because only certain common commands have functions & send oesn't seem to work
-time.sleep(5)
+#device1.home()          # don't recommend using device.functions because only certain common commands have functions & send oesn't seem to work
+#time.sleep(5)
 # device1.move_rel(5000)
 # device1.send("home")    # doesn't work
