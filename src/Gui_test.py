@@ -87,25 +87,25 @@ def directCtrlFrame(root):
     #Forward button
     forward_button = ttk.Button(main_frame, text="Forward")
     forward_button.grid(row=5, column=1)
-    forward_button['command'] = lambda: movedist (dist_entry.get(), "E",speed_entry.get(),ymotor_entry.get())
+    forward_button['command'] = lambda: movedist (dist_entry.get(), 1,ymotor_entry.get())
     root.bind('<Up>', lambda event: print("Forward key"))
 
     #back button
     back_button = ttk.Button(main_frame, text="Back")
     back_button.grid(row=7, column=1)
-    back_button['command'] = lambda: movedist (dist_entry.get(), "R",speed_entry.get(),ymotor_entry.get())
+    back_button['command'] = lambda: movedist (dist_entry.get(), -1,ymotor_entry.get())
     root.bind('<Down>', lambda event: print("Back key"))
 
     # Left button
     left_button = ttk.Button(main_frame, text="Left")
     left_button.grid(row=6, column=0)
-    left_button['command'] = lambda: movedist (dist_entry.get(), "R",speed_entry.get(),xmotor_entry.get())
+    left_button['command'] = lambda: movedist (dist_entry.get(), -1,xmotor_entry.get())
     root.bind('<Left>', lambda event: print("Left key"))
 
     # Right button
     right_button = ttk.Button(main_frame, text="Right")
     right_button.grid(row=6, column=2)
-    right_button['command'] = lambda: movedist (dist_entry.get(), "E",speed_entry.get(),xmotor_entry.get())
+    right_button['command'] = lambda: movedist (dist_entry.get(), 1,xmotor_entry.get())
     root.bind('<Right>', lambda event: print("Right key"))
 
     # Stop button
@@ -117,13 +117,13 @@ def directCtrlFrame(root):
     #Up button
     up_button = ttk.Button(main_frame, text="Up")
     up_button.grid(row=9, column=0)
-    up_button['command'] = lambda: movedist (dist_entry.get(), "R",speed_entry.get(),zmotor_entry.get())
+    up_button['command'] = lambda: movedist (dist_entry.get(), -1,zmotor_entry.get())
     root.bind('<u>', lambda event: print("Up key"))
 
     #Down button
     down_button = ttk.Button(main_frame, text="Down")
     down_button.grid(row=10, column=0)
-    down_button['command'] = lambda: movedist (dist_entry.get(), "E",speed_entry.get(),zmotor_entry.get())
+    down_button['command'] = lambda: movedist (dist_entry.get(), 1,zmotor_entry.get())
     root.bind('<j>', lambda event: print("Down key"))
 
     # home buttons
