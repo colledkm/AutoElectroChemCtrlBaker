@@ -2,7 +2,7 @@
 # TODO: When given a distance and direction, make the motor move accordingly.
 # -------------------------------------------------------------------------
 
-def movedist (distance, direction,device):
+def movedist (distance, direction_sign,device):
     # removed speed for now (third variable)
     # where device = device number.
     from src.check_command_succeeded import check_command_succeeded
@@ -10,13 +10,13 @@ def movedist (distance, direction,device):
     import time # Added
 
     # -------------------------------------------------------------------------
-    # TODO: Convert direction into +1 or -1  Put in the true conversion.
+    # TODO: Create device
     # -------------------------------------------------------------------------
 
-    if direction == 1:  # Changed from R to E for extend since + = extend - = retract in commands
-        direction_sign = 1 # extend
-    else:
-        direction_sign = -1 # retract
+    # command = BinaryCommand(device, 21, steps)   # Added. 21 = move rel
+    port = BinarySerial(device)                  # Added
+    command = BinaryCommand(0, 1)
+    port.write(command)                           # Added
 
     # -------------------------------------------------------------------------
     # TODO: Convert distances to steps.  Put in the true conversion.
@@ -29,11 +29,6 @@ def movedist (distance, direction,device):
     # TODO: Insert motor move command
     # -------------------------------------------------------------------------
     # device.move_rel(speed,blocking=True)   # Added Commented Out
-
-    # command = BinaryCommand(device, 21, steps)   # Added. 21 = move rel
-    port = BinarySerial("COM13")                  # Added
-    command = BinaryCommand(0, 1)
-    port.write(command)                           # Added
 
     #r eply = device.move_rel(steps)  # move rel 2000 microsteps #A dded Commented out everything below
 
