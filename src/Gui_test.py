@@ -68,12 +68,12 @@ def directCtrlFrame(root):
     # #with BinarySerial("zmotor_entry") as port:         # Windows
     #     zmotor = BinaryDevice(port, 3)  # motor on x axis
 
-    # Speed
-    speed_label = ttk.Label(main_frame, text="Speed")
-    speed_label.grid(row=2, column=0)
-    speed_entry = ttk.Entry(main_frame, width=8)
-    speed_entry.insert(0, "600")
-    speed_entry.grid(row=3, column=0)
+    # # Speed
+    # speed_label = ttk.Label(main_frame, text="Speed")
+    # speed_label.grid(row=2, column=0)
+    # speed_entry = ttk.Entry(main_frame, width=8)
+    # speed_entry.insert(0, "600")
+    # speed_entry.grid(row=3, column=0)
 
     # Distance
     dist_label = ttk.Label(main_frame, text="Distance")
@@ -126,22 +126,22 @@ def directCtrlFrame(root):
     down_button['command'] = lambda: movedist (dist_entry.get(), 1,zmotor_entry.get())
     root.bind('<j>', lambda event: print("Down key"))
 
-    # home buttons
-    home_button = ttk.Button(main_frame, text="Home")
-    home_button.grid(row=9, column=2)
-    home_button['command'] = lambda: print("Home button")
+    # # home buttons
+    # home_button = ttk.Button(main_frame, text="Home")
+    # home_button.grid(row=9, column=2)
+    # home_button['command'] = lambda: print("Home button")
 
-    #Set home button
-    set_home_button = ttk.Button(main_frame, text="Set Home")
-    set_home_button.grid(row=10, column=2)
-    set_home_button['command'] = lambda: print("Set Home button")
+    # #Set home button
+    # set_home_button = ttk.Button(main_frame, text="Set Home")
+    # set_home_button.grid(row=10, column=2)
+    # set_home_button['command'] = lambda: print("Set Home button")
 
     ttk.Label(main_frame, text=" ").grid(row=9, column=1) #blank for for formatting
 
     # Buttons for quit and exit
-    q_button = ttk.Button(main_frame, text="Quit")
-    q_button.grid(row=14, column=0)
-    q_button['command'] = lambda: print("Quit button")
+    # q_button = ttk.Button(main_frame, text="Quit")
+    # q_button.grid(row=14, column=0)
+    # q_button['command'] = lambda: print("Quit button")
 
     e_button = ttk.Button(main_frame, text="Exit")
     e_button.grid(row=12, column=2)

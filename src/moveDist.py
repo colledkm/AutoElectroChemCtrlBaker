@@ -22,7 +22,7 @@ def movedist (distance, direction_sign,device):
     # -------------------------------------------------------------------------
 
     converter = 1 # converts distance to steps.  (steps/distance)
-    steps = distance*converter*direction_sign #number of microsteps to move
+    steps = int(distance)*converter*int(direction_sign) #number of microsteps to move
 
     # -------------------------------------------------------------------------
     # TODO: Insert motor move command
