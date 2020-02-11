@@ -1,6 +1,8 @@
 import tkinter
 from tkinter import ttk
 from moveDist import movedist
+from zaber.serial import BinarySerial, BinaryDevice
+
 
 def deviceInputFrame(root):
 
@@ -42,6 +44,10 @@ def directCtrlFrame(root):
     xmotor_entry = ttk.Entry(main_frame, width=15)
     xmotor_entry.insert(0, "/dev/ttyUSB0")
     xmotor_entry.grid(row=1, column=0)
+    with BinarySerial(xmotor_entry) as port:  # Linux
+    # with BinarySerial("xmotor_entry") as port:         # Windows
+
+    device1 = BinaryDevice(port, 1)  # motor on x axis
 
     # yaxis motor
     ymotor_label = ttk.Label(main_frame, text="y-axis motor")
@@ -49,6 +55,9 @@ def directCtrlFrame(root):
     ymotor_entry = ttk.Entry(main_frame, width=15)
     ymotor_entry.insert(0, "/dev/ttyUSB0")
     ymotor_entry.grid(row=1, column=1)
+    with BinarySerial(ymotor_entry) as port:  # Linux
+    #with BinarySerial("ymotor_entry") as port:         # Windows
+    device1 = BinaryDevice(port, 2)  # motor on x axis
 
     # zaxis motor
     zmotor_label = ttk.Label(main_frame, text="z-axis motor")
@@ -71,12 +80,12 @@ def directCtrlFrame(root):
     dist_entry.insert(0, "20")
     dist_entry.grid(row=3, column=1)
 
-    ttk.Label(main_frame, text=" ").grid(row=2, column=1) #Inserts a blank row for formatting purposes
+    ttk.Label(main_frame, text=" ").grid(row=4, column=1) #Inserts a blank row for formatting purposes
 
     #Forward button
     forward_button = ttk.Button(main_frame, text="Forward")
     forward_button.grid(row=5, column=1)
-    forward_button['command'] = lambda: movedist (dist_entry, direction,speed_entry,device)
+    forward_button['command'] = lambda: movedist (dist_entry, "E",speed_entry,device)
     root.bind('<Up>', lambda event: print("Forward key"))
 
     # Left button
@@ -129,11 +138,11 @@ def directCtrlFrame(root):
 
     # Buttons for quit and exit
     q_button = ttk.Button(main_frame, text="Quit")
-    q_button.grid(row=12, column=0)
+    q_button.grid(row=14, column=0)
     q_button['command'] = lambda: print("Quit button")
 
     e_button = ttk.Button(main_frame, text="Exit")
-    e_button.grid(row=10, column=2)
+    e_button.grid(row=12, column=2)
     e_button['command'] = lambda: exit()
 
 
