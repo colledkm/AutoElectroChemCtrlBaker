@@ -44,9 +44,9 @@ def directCtrlFrame(root):
     xmotor_entry = ttk.Entry(main_frame, width=15)
     xmotor_entry.insert(0, "/dev/ttyUSB0")
     xmotor_entry.grid(row=1, column=0)
-    with BinarySerial(xmotor_entry) as port:  # Linux
-    #with BinarySerial("xmotor_entry") as port:         # Windows
-        xmotor = BinaryDevice(port, 1)  # motor on x axis
+    # with BinarySerial(str(xmotor_entry.get())) as port:  # Linux
+    # #with BinarySerial("xmotor_entry") as port:         # Windows
+    #     xmotor = BinaryDevice(port, 1)  # motor on x axis
 
     # yaxis motor
     ymotor_label = ttk.Label(main_frame, text="y-axis motor")
@@ -54,9 +54,9 @@ def directCtrlFrame(root):
     ymotor_entry = ttk.Entry(main_frame, width=15)
     ymotor_entry.insert(0, "/dev/ttyUSB0")
     ymotor_entry.grid(row=1, column=1)
-    with BinarySerial(ymotor_entry) as port:  # Linux
-    #with BinarySerial("ymotor_entry") as port:         # Windows
-        ymotor = BinaryDevice(port, 2)  # motor on x axis
+    # with BinarySerial(str(ymotor_entry.get())) as port:  # Linux
+    # #with BinarySerial("ymotor_entry") as port:         # Windows
+    #     ymotor = BinaryDevice(port, 2)  # motor on x axis
 
     # zaxis motor
     zmotor_label = ttk.Label(main_frame, text="z-axis motor")
@@ -64,9 +64,9 @@ def directCtrlFrame(root):
     zmotor_entry = ttk.Entry(main_frame, width=15)
     zmotor_entry.insert(0, "/dev/ttyUSB0")
     zmotor_entry.grid(row=1, column=2)
-    with BinarySerial(zmotor_entry) as port:  # Linux
-    #with BinarySerial("zmotor_entry") as port:         # Windows
-        zmotor = BinaryDevice(port, 3)  # motor on x axis
+    # with BinarySerial(str(zmotor_entry.get())) as port:  # Linux
+    # #with BinarySerial("zmotor_entry") as port:         # Windows
+    #     zmotor = BinaryDevice(port, 3)  # motor on x axis
 
     # Speed
     speed_label = ttk.Label(main_frame, text="Speed")
@@ -87,25 +87,25 @@ def directCtrlFrame(root):
     #Forward button
     forward_button = ttk.Button(main_frame, text="Forward")
     forward_button.grid(row=5, column=1)
-    forward_button['command'] = lambda: movedist (dist_entry, "E",speed_entry,ymotor)
+    forward_button['command'] = lambda: movedist (dist_entry.get(), "E",speed_entry.get(),ymotor_entry.get())
     root.bind('<Up>', lambda event: print("Forward key"))
 
     #back button
     back_button = ttk.Button(main_frame, text="Back")
     back_button.grid(row=7, column=1)
-    back_button['command'] = lambda: movedist (dist_entry, "R",speed_entry,ymotor)
+    back_button['command'] = lambda: movedist (dist_entry.get(), "R",speed_entry.get(),ymotor_entry.get())
     root.bind('<Down>', lambda event: print("Back key"))
 
     # Left button
     left_button = ttk.Button(main_frame, text="Left")
     left_button.grid(row=6, column=0)
-    left_button['command'] = lambda: movedist (dist_entry, "R",speed_entry,xmotor)
+    left_button['command'] = lambda: movedist (dist_entry.get(), "R",speed_entry.get(),xmotor_entry.get())
     root.bind('<Left>', lambda event: print("Left key"))
 
     # Right button
     right_button = ttk.Button(main_frame, text="Right")
     right_button.grid(row=6, column=2)
-    right_button['command'] = lambda: movedist (dist_entry, "E",speed_entry,xmotor)
+    right_button['command'] = lambda: movedist (dist_entry.get(), "E",speed_entry.get(),xmotor_entry.get())
     root.bind('<Right>', lambda event: print("Right key"))
 
     # Stop button
@@ -117,19 +117,19 @@ def directCtrlFrame(root):
     #Up button
     up_button = ttk.Button(main_frame, text="Up")
     up_button.grid(row=9, column=0)
-    up_button['command'] = lambda: movedist (dist_entry, "R",speed_entry,zmotor)
+    up_button['command'] = lambda: movedist (dist_entry.get(), "R",speed_entry.get(),zmotor_entry.get())
     root.bind('<u>', lambda event: print("Up key"))
 
     #Down button
     down_button = ttk.Button(main_frame, text="Down")
     down_button.grid(row=10, column=0)
-    down_button['command'] = lambda: movedist (dist_entry, "E",speed_entry,zmotor)
+    down_button['command'] = lambda: movedist (dist_entry.get(), "E",speed_entry.get(),zmotor_entry.get())
     root.bind('<j>', lambda event: print("Down key"))
 
     # home buttons
     home_button = ttk.Button(main_frame, text="Home")
     home_button.grid(row=9, column=2)
-    home_button['command'] = lambda: print("Home button", speed_entry)
+    home_button['command'] = lambda: print("Home button")
 
     #Set home button
     set_home_button = ttk.Button(main_frame, text="Set Home")
