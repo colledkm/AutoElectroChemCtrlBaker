@@ -39,3 +39,4 @@ ndevices = 1
 #time.sleep(5)
 # device1.move_rel(5000)
 # device1.send("home")    # doesn't work
+#
