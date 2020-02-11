@@ -10,11 +10,11 @@ def movedist (distance, direction_sign,device):
     import time # Added
 
     # -------------------------------------------------------------------------
-    # TODO: Create device
+    # DONE: Create device
     # -------------------------------------------------------------------------
 
     # command = BinaryCommand(device, 21, steps)   # Added. 21 = move rel
-    port = BinarySerial(device)                  # Added
+    port = BinarySerial(str(device))                  # Added
 
 
     # -------------------------------------------------------------------------
@@ -23,6 +23,7 @@ def movedist (distance, direction_sign,device):
 
     converter = 1 # converts distance to steps.  (steps/distance)
     steps = distance*converter*direction_sign #number of microsteps to move
+    
 
     # -------------------------------------------------------------------------
     # TODO: Insert motor move command
