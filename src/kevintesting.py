@@ -14,7 +14,7 @@ import time
 
 # Assume that our serial port can be found at COM1
 
-port = BinarySerial("COM13")    # be mindful of which COM port to use; check device manager; may need to restart port
+port = BinarySerial("COM6")    # be mindful of which COM port to use; check device manager; may need to restart port
 # with BinarySerial("COM13") as port:
 # Device number 0, command number 1.    1 is Home. 0 is Reset, move absolute is 20, relative is 21
 # command = BinaryCommand(0, 1)
