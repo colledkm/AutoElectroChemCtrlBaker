@@ -10,10 +10,10 @@ def movedist (distance, direction,speed,device):
     # TODO: Convert direction into +1 or -1  Put in the true conversion.
     # -------------------------------------------------------------------------
 
-    if direction=="R":
-        direction_sign = 1 #rotate clockwise
+    if direction=="E":  #Changed from R to E for extend since + = extend - = retract in commands
+        direction_sign = 1 #extend
     else:
-        direction_sign = -1 #rotate counterclockwise
+        direction_sign = -1 #retract
 
     # -------------------------------------------------------------------------
     # TODO: Convert distances to steps.  Put in the true conversion.
